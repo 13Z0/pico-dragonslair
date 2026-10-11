@@ -1,0 +1,67 @@
+The files in this directory come from three sources.
+
+1. The MAME project (https://github.com/mamedev/mame), under the BSD-3-Clause
+   licence below, taken from pico-galagino, which took them from
+   pico-mooncresta:
+
+     z80.c, z80.h                src/devices/cpu/z80/z80.cpp, z80.h, z80.inc
+                                 Juergen Buchmueller; one addition,
+                                 z80_hold_irq() (MAME's HOLD_LINE)
+     z80.lst                     src/devices/cpu/z80/z80.lst, unchanged
+                                 Juergen Buchmueller, Andrei I. Holub
+     z80_ops.h                   generated from z80.lst by tools/z80gen.py,
+                                 which is derived from src/devices/cpu/z80/
+                                 z80make.py: Andre I. Holub
+
+   The memory map, the inputs and the DIP switches of the board in
+   dl_machine.c follow src/mame/cinematronics/dlair.cpp (Aaron Giles).
+
+2. Hypseus Singe (https://github.com/DirtBagXon/hypseus-singe), a fork of
+   DAPHNE, under the GNU General Public License version 2 or (at your option)
+   any later version, used here under version 3:
+
+     ldv1000.c, ldv1000.h        ported from src/ldp-in/ldv1000.cpp
+                                 Copyright (C) 2001 Matt Ownby, with
+                                 contributions by Mark Broadhead
+     ldplayer.c (search, play    following src/ldp-out/ldp.cpp
+     and pause rules)            Copyright (C) 2001 Matt Ownby
+
+   The laserdisc strobe timing, the DIP switch defaults, the fast boot patch
+   and the scoreboard layout in dl_machine.c follow src/game/lair.cpp
+   (Copyright (C) 2001 Matt Ownby; Mark Broadhead, Robert DiNapoli, Jeff
+   Kulczycki).
+
+3. Original to pico-dragonslair, under the GNU General Public License v3.0
+   with the rest of the project: ay8910.c/.h, dlair.h (with the parts named
+   above), ldstream.c/.h, pld.c/.h, scoreboard.c/.h, dl_port.h, and
+   romload.c/.h (adapted from pico-mooncresta).
+
+--------------------------------------------------------------------------------
+BSD-3-Clause, for the MAME files listed under 1.
+
+Copyright (c) the copyright holders named above
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

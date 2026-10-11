@@ -1,0 +1,48 @@
+# Build trees (bld.sh recreates build/ on every run)
+**/build*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+
+# Release outputs (buildAll.sh, bld.sh -b)
+releases/
+releases_bl/
+*.uf2
+*.elf
+*.elf.map
+*.dis
+*.bin
+*.hex
+
+# Dragon's Lair ROM and laserdisc data. Copyright Cinematronics / Don Bluth -
+# it must never be committed, in any form.
+/roms/
+*.zip
+*.bin
+*.chd
+*.pld
+
+# CPU test programs for hosttest/zex_host (fetched separately)
+*.com
+
+# Host harness (hosttest/) binaries and outputs
+hosttest/dl_host
+hosttest/pld_check
+hosttest/zex_host
+tools/ld2pico/build/
+hosttest/out*/
+hosttest/**/*.ppm
+hosttest/**/*.png
+hosttest/**/*.wav
+
+# Python
+__pycache__/
+*.pyc
+
+# Editors and OS cruft
+.vscode/
+.idea/
+*~
+*.swp
+.DS_Store
+*Zone.Identifier
