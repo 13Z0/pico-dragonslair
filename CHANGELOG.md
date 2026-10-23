@@ -16,6 +16,10 @@ An emulator of the laserdisc arcade game Dragon's Lair (Cinematronics, 1983) for
 
 # Changelog
 
+## v0.1.1
+
+- The release now includes updateAll.exe, which installs the ROM set `dlair.zip` on the SD card from a Windows computer. The readme explains how to use it. The laserdisc is still converted with ld2pico.exe.
+
 ## v0.1
 
 Initial release.
@@ -29,6 +33,8 @@ Initial release.
 ## Downloads by configuration
 
 The laserdisc converter for Windows: [ld2pico.exe](https://github.com/PicoPlus-devel/pico-dragonslair/releases/latest/download/ld2pico.exe)
+
+The ROM set installer for Windows: [updateAll.exe](https://github.com/PicoPlus-devel/pico-dragonslair/releases/latest/download/updateAll.exe)
 
 Binaries for each configuration are listed below. Only RP2350-based boards are supported; no RP2040 / Pico 1 binaries are provided.
 
