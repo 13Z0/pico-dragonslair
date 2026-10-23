@@ -42,6 +42,17 @@ Two things are needed, both in the folder **`/roms/arcade/DLAIR`** on the SD car
 
 The MAME **`dlair`** set: Dragon's Lair (US revision F2). Four files of 8 KB. Copy **`dlair.zip`** as it is, or its files unzipped (a subfolder `dlair`, which unzipping commonly produces, is searched as well). Files are recognised by their size and CRC32, so their names do not matter. In a merged set the clone sets in the subfolders of the archive are ignored; the other revisions of the game are not supported.
 
+**updateAll installs the set.** `updateAll.exe`, a program for Windows 10 and 11, is included in every release of pico-dragonslair, among the files at the end of the release page. It runs on a computer with the SD card inserted: it takes `dlair.zip` from a folder of your choice, or downloads it when it is not there, and writes the set, unzipped, into `/roms/arcade/DLAIR`. It does not install the laserdisc; see below. It is a single file and needs no installation. The program is not signed, so Windows may show "Windows protected your PC" the first time it is started; select **More info**, then **Run anyway**.
+
+1. Start `updateAll.exe`. It selects a removable drive by itself; under **SD card**, check that it is the card, or choose another.
+2. Under **Zip folder**, choose the folder with the MAME zips you already have, if any.
+3. Untick the sets that are not wanted. updateAll also installs the sets of other applications of this family, such as pico-galagino and pico-outrun; pico-dragonslair needs only the set **Dragon's Lair**. The **Status** column shows which sets are already complete on the card.
+4. Select **Install**.
+
+By default, zips that are not in the zip folder are downloaded from [ArcadeROMsDB_MiSTer](https://github.com/zakk4223/ArcadeROMsDB_MiSTer), a third-party database that is not part of this project. The user is responsible for holding the rights to the ROM sets, whether they are supplied as zips or downloaded. To use only your own zips, untick **Download missing zips**.
+
+updateAll is maintained in [pico-bootLoader](https://github.com/PicoPlus-devel/pico-bootLoader), whose SD-card archive carries it as well. The same installer is also available there as a Python script, `updateAll.py`, for Linux and macOS, and as a PowerShell script, `updateAll.ps1`. The [updateAll README](https://github.com/PicoPlus-devel/pico-bootLoader/blob/main/updateAll/README.md) describes all three and their options.
+
 ### The laserdisc
 
 All pictures and sound of Dragon's Lair are on its laserdisc, which the game controls through the LD-V1000 player. The disc is taken from MAME's laserdisc image **`dlair.chd`** (12.3 GB). A microcontroller cannot play that image directly: it is stored losslessly and would have to be read from the SD card at several megabytes per second. It is therefore converted once, on a computer, into the file **`lair.pld`**. That file holds every picture of the disc at 320x240 pixels in 256 colours per scene, coded against the previous picture, and the sound as a separate track at 22 kHz. It is about 260 MB.
@@ -213,6 +224,7 @@ python3 hosttest/ppm2png.py hosttest/out/field_001200.ppm
 - LD-V1000 laserdisc player, laserdisc timing and scoreboard layout: DAPHNE and Hypseus Singe, by Matt Ownby, Mark Broadhead and others, under the GNU General Public License version 2 or later; see [dlair/LICENSE](dlair/LICENSE).
 - Laserdisc CHD reading: libchdr (Romain Tisserand and others, BSD-3-Clause) and dr_flac (David Reid, public domain or MIT-0), in [tools/ld2pico/third_party/libchdr](tools/ld2pico/third_party/libchdr); the A/V Huffman codec follows MAME's `avhuff.cpp` (Aaron Giles, BSD-3-Clause).
 - miniz (inflate and CRC32): Rich Geldreich and others; see the licence text in [third_party/miniz/miniz.c](third_party/miniz/miniz.c).
+- updateAll, the ROM set installer included in the releases as `updateAll.exe`: [pico-bootLoader](https://github.com/PicoPlus-devel/pico-bootLoader/tree/main/updateAll), under the GNU General Public License v3.0, built with miniz and cJSON (MIT licence). Its source is in that repository.
 - Framework, menu, display, audio and controller support: [pico_shared](https://github.com/PicoPlus-devel/pico_shared) and the sister projects listed above.
 
 pico-dragonslair is distributed under the GNU General Public License v3.0; see [LICENSE](LICENSE).
