@@ -16,6 +16,10 @@ An emulator of the laserdisc arcade game Dragon's Lair (Cinematronics, 1983) for
 
 # Changelog
 
+## v0.1.2
+
+- Fixed: on the Adafruit Fruit Jam and other boards with PIO-USB, USB controllers were often not found at start-up.
+
 ## v0.1.1
 
 - The release now includes updateAll.exe, which installs the ROM set `dlair.zip` on the SD card from a Windows computer. The readme explains how to use it. The laserdisc is still converted with ld2pico.exe.
